@@ -7,6 +7,10 @@ var hbs = require('hbs');
 var fs = require('fs');
 app.set('view engine', hbs);
 var port = process.env.PORT || 3000;
+var dir = './files';
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
 app.get('/', function(req, res){
     res.render('home.hbs');
 });
