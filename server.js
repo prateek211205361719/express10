@@ -6,6 +6,7 @@ var util = require('util');
 var hbs = require('hbs');
 var fs = require('fs');
 app.set('view engine', hbs);
+var port = process.env.PORT || 3000;
 app.get('/', function(req, res){
     res.render('home.hbs');
 });
@@ -37,6 +38,6 @@ app.post('/', function(req, res){
     });
 });
 
-app.listen(3000, function(){
-    console.log('-----running------');
+app.listen(port, function(){
+    console.log('-----running------'+port);
 });
